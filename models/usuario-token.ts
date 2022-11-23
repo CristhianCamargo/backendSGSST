@@ -1,6 +1,6 @@
 import { DataTypes } from 'sequelize';
 import db from '../database/connection';
-import Usuario from './usuario';
+import Customer from './customer';
 
 const UsuarioToken = db.define( 'usuario_token', {
   idUsuarioToken: {
@@ -13,7 +13,7 @@ const UsuarioToken = db.define( 'usuario_token', {
     type: DataTypes.INTEGER,
     field: 'usuario_id',
     references: {
-      model: Usuario,
+      model: Customer,
       key: 'id'
     }
   },

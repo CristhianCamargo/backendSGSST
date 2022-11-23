@@ -3,8 +3,8 @@ import express from "express";
 declare global {
   namespace Express {
     interface Request {
-      uid?: Record<number,any>,
-      usuario?: Record<any>,
+      id?: Record<number,any>,
+      customer?: Record<any>,
       tokenPush?: Record<string,any>
     }
   }

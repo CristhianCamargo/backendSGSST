@@ -9,3 +9,6 @@ node_modules
 
 # Ignora los archivos relacionados a API keys
 .env
+
+# Ignora los Logs
+logs

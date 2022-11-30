@@ -5,7 +5,7 @@
 node_modules
 
 # Ignora la carpeta dist
-dist
+#dist
 
 # Ignora los archivos relacionados a API keys
 .env

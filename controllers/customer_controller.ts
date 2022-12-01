@@ -307,8 +307,14 @@ export const updateCustomerStateFalse = async (req: Request, res: Response) => {
 
 export const updateCustomerStateTrue = async (req: Request, res: Response) => {
     try {
+
+        const {
+            customer_id
+        } = req.params;
+
         const resTmp: any = await Customer.update({ customerState: true }, {
             where: {
+                customerId: customer_id,
                 customerState: false
             }
         });

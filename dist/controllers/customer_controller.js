@@ -255,8 +255,10 @@ const updateCustomerStateFalse = (req, res) => __awaiter(void 0, void 0, void 0,
 exports.updateCustomerStateFalse = updateCustomerStateFalse;
 const updateCustomerStateTrue = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
+        const { customer_id } = req.params;
         const resTmp = yield customer_1.default.update({ customerState: true }, {
             where: {
+                customerId: customer_id,
                 customerState: false
             }
         });

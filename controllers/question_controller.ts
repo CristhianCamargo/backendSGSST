@@ -72,7 +72,7 @@ export const addQuestion = async (req: Request, res: Response) => {
         }
 
         const resQuestions = await Question.create({
-            surveyId: survey_id,
+            surveyId: 1,
             questionContent: question_content
         });
 

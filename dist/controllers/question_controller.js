@@ -71,7 +71,7 @@ const addQuestion = (req, res) => __awaiter(void 0, void 0, void 0, function* ()
             return res.status(500).json({ message: "Esta pregunta ya existe" });
         }
         const resQuestions = yield question_1.default.create({
-            surveyId: survey_id,
+            surveyId: 1,
             questionContent: question_content
         });
         return res.status(200).json({ message: "OK", resQuestions });

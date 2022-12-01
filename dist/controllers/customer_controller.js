@@ -258,7 +258,7 @@ const updateCustomerStateTrue = (req, res) => __awaiter(void 0, void 0, void 0, 
         const { customer_id } = req.params;
         const resTmp = yield customer_1.default.update({ customerState: true }, {
             where: {
-                customerId: customer_id,
+                customerId: req.customer.customerId,
                 customerState: false
             }
         });

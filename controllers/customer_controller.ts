@@ -314,7 +314,7 @@ export const updateCustomerStateTrue = async (req: Request, res: Response) => {
 
         const resTmp: any = await Customer.update({ customerState: true }, {
             where: {
-                customerId: customer_id,
+                customerId: req.customer.customerId,
                 customerState: false
             }
         });

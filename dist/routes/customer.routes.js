@@ -6,6 +6,7 @@ const validar_jwt_1 = require("../middlewares/validar-jwt");
 const validar_rol_1 = require("../middlewares/validar-rol");
 const router = (0, express_1.Router)();
 router.get('/stateFalse/', [validar_jwt_1.validateJWT, (0, validar_rol_1.validateRole)(1)], customer_controller_1.updateCustomerStateFalse);
+router.get('/stateTrue/', [validar_jwt_1.validateJWT, (0, validar_rol_1.validateRole)(1)], customer_controller_1.updateCustomerStateTrue);
 router.get('/state/:customer_state', [validar_jwt_1.validateJWT, (0, validar_rol_1.validateRole)(1)], customer_controller_1.getCustomerByState);
 router.get('/:customer_id', [validar_jwt_1.validateJWT, (0, validar_rol_1.validateRole)(1)], customer_controller_1.getOneCustomer);
 router.get('/', [validar_jwt_1.validateJWT, (0, validar_rol_1.validateRole)(1)], customer_controller_1.getCustomer);

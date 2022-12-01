@@ -304,3 +304,19 @@ export const updateCustomerStateFalse = async (req: Request, res: Response) => {
         return res.status(500).json({ ok: false, msg: "Ocurrio un error" });
     }
 }
+
+export const updateCustomerStateTrue = async (req: Request, res: Response) => {
+    try {
+        const resTmp: any = await Customer.update({ customerState: true }, {
+            where: {
+                customerState: false
+            }
+        });
+
+        return res.status(200).json({ message: "OK", resTmp });
+
+    } catch (error) {
+        console.log("😪error:", error);
+        return res.status(500).json({ ok: false, msg: "Ocurrio un error" });
+    }
+}

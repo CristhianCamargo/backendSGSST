@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateCustomerStateFalse = exports.updateCustomerStateLocalStorage = exports.deleteCustomer = exports.updateCustomer = exports.addCustomer = exports.getCustomerByState = exports.getOneCustomer = exports.getCustomer = void 0;
+exports.updateCustomerStateTrue = exports.updateCustomerStateFalse = exports.updateCustomerStateLocalStorage = exports.deleteCustomer = exports.updateCustomer = exports.addCustomer = exports.getCustomerByState = exports.getOneCustomer = exports.getCustomer = void 0;
 const sequelize_1 = require("sequelize");
 const encrypt_pass_1 = require("../helpers/encrypt-pass");
 const pattern_email_1 = require("../helpers/pattern-email");
@@ -253,4 +253,19 @@ const updateCustomerStateFalse = (req, res) => __awaiter(void 0, void 0, void 0,
     }
 });
 exports.updateCustomerStateFalse = updateCustomerStateFalse;
+const updateCustomerStateTrue = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const resTmp = yield customer_1.default.update({ customerState: true }, {
+            where: {
+                customerState: false
+            }
+        });
+        return res.status(200).json({ message: "OK", resTmp });
+    }
+    catch (error) {
+        console.log("😪error:", error);
+        return res.status(500).json({ ok: false, msg: "Ocurrio un error" });
+    }
+});
+exports.updateCustomerStateTrue = updateCustomerStateTrue;
 //# sourceMappingURL=customer_controller.js.map
